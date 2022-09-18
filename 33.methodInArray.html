@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //push 添加元素到数组的末尾
+        var arr = [0, 1, 2, 3]
+        console.log(arr);
+        //return the updated length
+        console.log(arr.push(1));
+        console.log(arr);
+
+
+        //pop delete last element
+            //and return last element
+        console.log(arr.pop());
+        console.log(arr);
+
+
+        //unshift delete last element
+            //Adds one or more elements to the front of an array, 
+            //and returns the new length of the array.
+            // the index will be adjusted accordingly
+        var arr2 = [0, 1, 2, 3]
+        var res = arr2.unshift(-3, -2, -1)
+        console.log(arr2); //7
+        console.log(res); //[-3, -2, -1, 0, 1, 2, 3]
+
+
+        //shift()
+        //Removes the first element from an array and returns that element.
+        var arr3 = [0, 1, 2]
+        console.log(arr3.shift()); //0
+        console.log(arr3); //[1, 2]
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red !important;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function(){
+                // change the width of box1
+                // element.style.stylename = value
+                box1.style.width = '300px';
+                // 如果css的样式名中含有-
+                // 这样的变量在JS中是不合法的
+                // 改成CamelCase命名规则即可
+                // 通过style属性设置的样式都是内联样式（within html tag, 具有higher weight）
+                // 如果在样式中写了！important 则样式会有最高优先级
+                // 即使通过JS 也不能覆盖该样式，
+                box1.style.backgroundColor = "orange";
+                console.log(box1.style); //CSSStyleDeclaration
+            };
+
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function(){
+                // 通过style属性读取的样式 都是内联样式！
+                // 无法读取到样式表里的样式
+                console.log('Width: ', box1.style.width);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+    </div>
+    <button id="btn01">Click</button>
+    <button id="btn02">read property
+
+    </button>
+</body>
+</html>

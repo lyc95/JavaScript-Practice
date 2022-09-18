@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //forEach
+
+        // var arr = [1,2,3,4,5,6]
+        // console.log(arr);
+        // // arr.forEach(x => console.log(x))
+        // function prt(x){
+        //     console.log(x);
+        // }
+        // arr.forEach(prt);
+        // //forEach（(item, index, array) => {}）（IE8及以上）
+        // //需要一个函数作为参数，但是不是我们调用，为回调函数
+        // //函数里有几个参数就执行几次
+        // //浏览器会在回调函数中传递三个参数
+        //         //(item 正在遍历的元素, index正在遍历的索引, array正在遍历的数组)
+
+
+
+        //slice
+
+        //The slice() method returns a shallow copy of a portion of an array into a new 
+        //array object selected from start to end (end not included) where start and 
+        //end represent the index of items in that array. The original array will not 
+        //be modified.
+        // slice()
+        // slice(start)
+        // slice(start, end)
+        //A negative index can be used, indicating an offset from the end of the sequence. slice(-2) extracts the last two elements in the sequence.
+        // const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+        // console.log(animals.slice(2));
+        // // expected output: Array ["camel", "duck", "elephant"]
+
+        // console.log(animals.slice(2, 4));
+        // // expected output: Array ["camel", "duck"]
+
+        // console.log(animals.slice(1, 5));
+        // // expected output: Array ["bison", "camel", "duck", "elephant"]
+
+        // console.log(animals.slice(-2));
+        // // expected output: Array ["duck", "elephant"]
+
+        // console.log(animals.slice(2, -1));
+        // // expected output: Array ["camel", "duck"]
+
+        // console.log(animals.slice());
+        // // expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+
+        // var objarr = [{name:'yc'},{name:'yc'},{name:'yc'},{name:'yc'}]
+        // console.log(objarr); //lyc
+        // var objarr2 = objarr.slice()
+        // console.log(objarr2); //lyc
+        // objarr2[0].name = "lyc"
+        // // console.log('#1', objarr);//lyc
+        // // console.log('#2', objarr2);//lyc
+
+
+        //splice()拼接
+
+        //The splice() method changes the contents of an array by removing or replacing 
+        //existing elements and/or adding new elements in place
+        //影响到原数组，删除指定元素
+        //被删除的元素作为的返回值
+        // splice(start)
+        // splice(start, deleteCount)
+        // splice(start, deleteCount, item1)
+        // splice(start, deleteCount, item1, item2, itemN)
+        //  start 开始的索引
+        // deleteCount 删除的数量
+        // item1 传递新的元素，会自动插入到开始位置的索引前边
+
+        // var arr = [0, 1, 2, 3, 4,5];
+        // console.log(arr);
+        // arr.splice(0, 0, -1, -2, -3)
+        // console.log(arr);
+
+        //concat()
+        //merge two or more arrays. This method does not change the existing arrays, 
+        //but instead returns a new array.
+        // concat(value0)
+        // concat(value0, value1)
+        // concat(value0, value1, /* … ,*/ valueN)
+        // const array1 = ['a', 'b', 'c'];
+        // const array2 = ['d', 'e', 'f'];
+        // const array3 = array1.concat('d', 'e', 'f');
+        // const array4 = array1.concat(array2, 'g', 'h', 'i');
+        // console.log(array3);//['a', 'b', 'c', 'd', 'e', 'f']
+        // console.log(array4);//['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+
+
+        //join
+        //The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), 
+        //separated by commas or a specified separator string.
+
+
+        // const elements = ['Fire', 'Air', 'Water'];
+
+        // //默认是，连接
+        // console.log(elements.join());
+        // // expected output: "Fire,Air,Water"
+
+        // console.log(elements.join(''));
+        // // expected output: "FireAirWater"
+
+        // console.log(elements.join('-'));
+        // // expected output: "Fire-Air-Water"
+
+
+
+         //reverse()----inplace
+         //反转数组
+         //The reverse() method reverses an array in place and returns the reference to the same array
+
+            // const items = [1, 2, 3];
+            // items.reverse();
+            // console.log(items); // [3, 2, 1]
+
+
+
+        //sort 使用Unicode编码进行排序
+        //通常搭配reverse（）一起使用
+            //使用数字进行排序时会得到错误的结果
+                    // var arr = [0, 1, 2, 11, 3]
+                    // arr.sort();
+                    // console.log(arr);//[0, 1, 11, 2, 3]
+            //我们可以添加一个callback functio 来指定排序方法
+                // // Functionless
+                // sort()
+
+                // // Arrow function
+                // sort((a, b) => { /* … */ } )
+
+                // // Compare function
+                // sort(compareFn)
+
+                // // Inline compare function
+                // sort(function compareFn(a, b) { /* … */ })
+                    // > 0	sort a after b
+                    // < 0	sort a before b
+                    // === 0	keep original order of a and b
+
+            // The sort() method sorts the elements of an array in place 
+            // and returns the reference to the same array, now sorted. 
+            // The default sort order is ascending, built upon converting 
+            // the elements into strings, then comparing their sequences of UTF-16
+            // code units values.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

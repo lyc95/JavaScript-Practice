@@ -1,0 +1,1 @@
+alert("I'm the code writen in the external JS file")

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        console.log(history);
+        console.log(history.length);
+        /*
+            Length
+                获取到当前访问的link的数量
+            back
+                返回至上一个页面
+            forward
+                前进至上一个页面
+            go(n)
+                n > 0 : forward to  nth page 向前跳转 n 个页面
+                n < 0 : go back to nth page 向后跳转 n 个页面
+                需要一个整数
+                
+            
+        */
+       window.onload = function(){
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            history.forward();
+        }
+       }
+    </script>
+</head>
+<body>
+    <!-- 
+        History 
+            可以操作浏览器向前或者向后翻页
+     -->
+     <a href="1.HelloWorld.html">Go to Hello World</a>
+     <button id="btn">Click to forward to next page</button>
+</body>
+</html>

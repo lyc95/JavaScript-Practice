@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        img{
+            margin-top: 25px;
+            width: 200px;
+            height: 200px;
+        }
+        #outer{
+            margin: 50px auto;
+            width: 250px;
+            height: 250px;
+            background-color: #bfa;
+            text-align: center;
+        }
+        .inner{
+            margin: 0px auto;
+            text-align: center;
+            background-color: #bfa;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var next = document.getElementById("next")
+            var prev = document.getElementById("prev")
+            var img = document.getElementsByTagName("img")[0];
+
+            var arr = [
+                'imges/1.jpg',
+                'imges/2.jpg',
+                'imges/3.jpg',
+                'imges/4.jpg',
+                'imges/5.jpg',
+            ]
+            var index = 0
+            console.log(img.src);
+            prev.onclick = function(){
+                index--;
+                if (index < 0) index = arr.length-1;
+                img.src = arr[index]
+            }
+            next.onclick = function(){
+                index++;
+                if (index == arr.length) index = 0;
+                img.src = arr[index]
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <img src="imges/1.jpg" alt="">
+        <div class="inner">
+            <button id = "prev">Prev</button>&nbsp;
+            <button id = "next">Next</button>
+        </div>
+        
+    </div>
+</body>
+</html>

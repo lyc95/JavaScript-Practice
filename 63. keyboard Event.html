@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function(){
+            /*
+                onKeydown
+                    如果一直按着按键不松开， 事件会被连续触发
+                    连续触发时候， 第一次和第二次之间的间隔会稍微长一些（设计是为了放置误操作）
+                onKeyup
+                    松开一次触发一次
+
+
+                keyword event normally bind to 可以获取到焦点的对象 ie. input tag
+
+                keyCode
+                    判断按键的编码
+                altKey
+                ctrlKey
+                shiftKey
+                    判断alt， ctrl， shift是否被按下， 如果按下return true
+
+            */ 
+        //    document.onkeyup = function(event){
+        //     event = event || window.event
+        //     //console.log(event);
+        //     //console.log(event.which);
+        //    }
+        //    document.onkeydown = function(event){
+        //     event = event || window.event
+        //     //console.log(event.keyCode);
+        //     //判断y被按下
+        //     if (event.keyCode == 89) {
+        //         console.log("y been pressed");
+        //     }
+        //     //判断y和control 同时被按下
+        //     if (event.keyCode == 89 && event.ctrlKey) {
+        //         console.log("ctr + y");
+        //     }
+
+        //    }
+            var input = document.getElementsByTagName("input")[0];
+            input.onkeydown = function(event){
+                //console.log("pressed")
+                //在文本框中输入内容， 属于onkeydown 的默认行为
+                // 如果取消默认行为（return false）， 则输入的内容不会出现在文本框中
+                //return false;
+                event = event = window.event;
+                // console.log(event.keyCode);
+
+                //需求：使得文本框中不能输入数字
+                if (event.keyCode >= 48 && event.keyCode <= 57) {
+                    return false;
+                } else if (event.keyCode >= 96 && event.keyCode <= 105) {
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>

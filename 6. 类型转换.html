@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Data Conversion
+                Normally convert to String, Number and Boolean
+        */
+
+        // Convert to String
+            // 1.toString() method
+            // null and undefine do not have toString() method
+            // var num = 123;
+            // console.log(num)
+            // console.log(typeof num) //number
+            // var numStr = num.toString()
+            // console.log(numStr)
+            // console.log(typeof numStr) //string
+
+            // // 2. String() function
+            // // for Number and Boolean, it is actually calling toString()
+            // // for null and undefined, it will convert directly
+            // var numStr2 = String(num)
+            // console.log(numStr2)
+            // console.log(typeof numStr2) //string
+            // console.log(String(null)) //null
+            // console.log(String(undefined)) //undefined
+
+        // Convert to Number
+
+            //var a  = "123"
+            //console.log(a)
+            //console.log(typeof a) //string
+
+            //1.Number() function
+            // if this is pure numbers, is will convert accordingly
+            // if existed non-number, -> NaN
+            // if empty string -> 0
+            // if boolean true -> 1
+            // if boolean false -> 0
+            // if null -> 0
+            // if undefined -> NaN
+                // a = Number(a)
+                // console.log(typeof a) //number
+                // var b = Number("abc")
+                // console.log(b) //NaN
+                // console.log(typeof b) //number
+
+            //2.parseInt() 取有效整数内容，转换为number
+            //  parseFloat() 作用类似，取小数
+            // 如果对non-string使用以上两个function, 会先转换为string
+            // if boolean true -> NaN
+
+                // a = parseInt("123px")
+                // console.log(a)//123
+
+                // a = parseFloat("123.456.7px")
+                // console.log(a)//123.456
+
+                // a = parseFloat("px123.456.7")
+                // console.log(a)//NaN
+
+
+        //Convert Boolean
+            // 1. Boolean()
+                var a = 123
+                // a = Boolean(a)
+
+                // console.log(a) //true
+                // console.log(typeof a) //false
+                //Number -> Boolean
+                    // 0 or NaN -> false
+                    // rest -> true
+                //String -> Boolean
+                    //Empty String -> false
+                    // rest -> true
+                    // console.log(Boolean("  "))//true
+                    // console.log(Boolean(''))//flase
+
+                // console.log(Boolean(null))//flase
+                // console.log(Boolean(undefined))//flase
+
+                //Object -> Boolean = true
+                    //console.log(Boolean({}))//true
+            // 2. 对任意数据类型做两次非运算!!
+                // var a = "hello"
+                // console.log(!!a)//true
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            whether it contains aaa
+            设置量词设置出现的内容
+                - 只对前面的一个内容有用
+                - ab{3} abbb
+                - (ab){3} ababab
+                - ab{3}c abbbc
+                - {n} 出现n次
+                - {m,n} 出现 m to n 次
+                - {m,} 出现 m 次及以上
+                -  + 至少一个 = {1，}
+                -  *  零个或多个 = {0， }
+                -  ? 零个或一个 {0, 1}
+
+        */
+    //    var reg = /a{3}/
+    //    console.log(reg.test("kknmjhnjjnllkjaaaa"));//true
+    //    console.log(reg.test("kknmjhnjjnllkjaa"));//false
+
+    //    console.log(/ab{3}/.test("abbb"));//true
+    //    console.log(/ab{3}/.test("ababab"));//false
+    //    console.log(/(ab){3}/.test("abbb"));//false
+    //    console.log(/(ab){3}/.test("ababab"));//true
+
+    // start with a 
+    /*
+        ^ means statr (不可以在[]里)
+    */ 
+    console.log(/^a/.test('abcd')); //true
+    console.log(/^a/.test('bacd')); //false
+
+
+    // end with a 
+    /*
+        $ means end
+    */ 
+    console.log(/a$/.test('abcd')); //false
+    console.log(/a$/.test('abcda')); //true
+
+    /*
+        如果在正则表达式中同时使用^ $ 就要求完全符合
+        ^a$ ， a 即开始的同时又结束 ,只有a满足
+        /^a|a$/ a开头或结尾
+    */
+    console.log(/^a$/.test('a')); //true
+
+
+    //检查手机号
+    /*
+        1. start with 1
+        2. 3-9 for 2nd num
+        3. rest are all nums
+    */
+    var reg_phone = /^1[3-9][0-9]{9}$/;
+
+    console.log(reg_phone.test(15527270086)); //true
+    console.log(reg_phone.test(93380919)); //false
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Object - reference type
+            复合类的数据
+            1. 内建对象
+                Math
+                String
+                Number
+                Boolean
+                Object
+                ...
+            2. 宿主对象
+                provided by running environment
+                BOM
+                DOM
+            3. 自定义对象
+        */
+
+        //Create
+        var obj = new Object();
+        console.log(obj)
+        console.log(typeof obj)
+
+        //add attribute - obj.name = value
+            obj.name = "yc"
+            obj.age = 18
+            console.log(obj)
+
+        //read attribute - obj.name
+            console.log(obj.name) //yc
+            //if no attribute, it will return undefined instead throw an error
+            console.log(obj.hello) //undefined
+
+        //update attribute - obj.name = value
+            obj.name = "lyc"
+            console.log(obj.name) //lyc
+
+        // delete attribute - delete obj.name
+            console.log(obj)
+            delete obj.age;
+            console.log(obj)
+        //属性名   
+        //No requirement for the name of attribute for the object, can be any name
+            //但是如果你使用特殊的属性名 例如123
+            // 则须使用obj["123"] - Object[attributeName]
+            // attributeName can be variable
+            //obj.123 会报错
+            obj[123] = 456
+            console.log(obj[123]) //456
+            var a = 123
+            console.log(obj[a]) //456
+        //属性值 可以是任意数据类型（对象也可以）
+        
+
+        // in 运算符
+            //判断对象中是否含有某些属性
+            //attributeName in Object
+            console.log("name" in obj) //true
+            console.log("age" in obj) //false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

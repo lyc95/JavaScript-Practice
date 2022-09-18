@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        #box2{
+            padding: 10px;
+            background-color: #bfa;
+        }
+        #box4{
+            width: 200px;
+            height: 300px;
+            background-color: #bfa;
+            overflow: auto;
+        }
+        #box5{
+            width: 150px;
+            height: 600px;
+            background-color: yellow;
+            
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            var box4 = document.getElementById("box4");
+            btn01.onclick = function(){
+                console.log(box1.clientHeight);//120
+                console.log(box1.clientWidth);//120
+                console.log(box1.offsetHeight);//122
+                console.log(box1.offsetWidth);//122
+                var op = box1.offsetParent;
+                console.log(op.id);//box2
+                console.log(box1.offsetLeft);//10
+                alert(box4.scrollTop)//varies
+
+            }
+            // alert(box4.clientHeight)//300
+            // alert(box4.scrollHeight)//600
+            
+
+            
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        注意：以下样式都是只读的,未指明偏移量都是相对于当前窗口左上角
+
+        clientHeight    read-only
+            元素的可见高度，包括元素的内容区和内边距的高度
+        clientWidth     read-only
+            元素的可见宽度，包括元素的内容区和内边距的宽度
+        offsetHeight
+            整个元素的高度，包括内容区、内边距、边框
+        offfsetWidth
+            整个元素的宽度，包括内容区、内边距、边框
+        offsetParent
+            当前元素的定位父元素
+            离他最近的开启了定位的祖先元素，如果所有的元素都没有开启定位，则返回body
+        offsetLeft
+        offsetTop
+            当前元素和定位父元素之间的偏移量
+            offsetLeft水平偏移量 
+            offsetTop垂直偏移量
+
+        scrollHeight
+        scrollWidth
+            获取元素整个滚动区域的高度和宽度
+
+        scrollTop
+        scrollLeft
+            获取元素垂直和水平滚动条滚动的距离
+
+        判断滚动条是否滚动到底
+        垂直滚动条
+        scrollHeight -scrollTop = clientHeight
+
+        水平滚动
+        scrollWidth -scrollLeft = clientWidth 
+
+        onscroll 该事件会在元素滚动条滚动时触发的事件
+        var info =  document.getElementById("info");
+        info.onscroll = function(){
+               滚动区域的高度 - 滚动条的高度 = 元素的可见高度 
+               如果等式满足， 则证明元素滚动到底
+            if (info.scrollHeight -info.scrollTop == info.clientHeight){
+                //do something
+                //激活checkbox
+                checkboxObj.disabled = false;
+            }
+        }
+    -->
+
+    <button id="btn01">Click</button>
+    <div id="box4">
+        <div id="box5"></div>
+    </div>
+    <br/>
+    <div id="box3" style="position: relative;">
+        <div id="box2" style="position: relative;">
+            <div id="box1"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

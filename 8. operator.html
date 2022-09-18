@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            1. typeof
+                return the type of value in format of string
+                var a = typeof 123;
+                console.log(a) //number
+                console.log(typeof a) //string
+            2.  + - * / %
+                任何值和string相加都会转换成string
+                    利用这一特点将其他数据类型convert to string by {+ ""}
+                    隐式类型转换
+                当对非Number值进行相加是，先转换成Number
+                    null -> 0
+                任何数字和NaN相加,结果还是NaN
+        */
+                //    var res = 2 + null // 2
+                //    console.log(res)
+                //    res = 2 + NaN // NaN
+                //    console.log(res)
+
+                // var a = 123;
+                // a = a + "";
+                // console.log(typeof a) //string
+
+                // var res = 1 + 2 + "3"
+                // console.log(res) //33
+
+                // var res = "1" + 2 + 3
+                // console.log(res) //123
+
+
+                    //console.log(100 - true) //99
+                //除了+，其他所有的运算(- * /)都会先把data转换成Number后再做运算
+                //利用这一特点做隐式类型转换成Number， implicit conversion to Number
+                    // console.log(100  - "1") //99
+                    // console.log(2 * "8") //16
+                    // console.log(2 * null) //0
+                    // console.log(2 * undefined) //NaN
+                    // console.log(2 * {})//NaN
+                
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

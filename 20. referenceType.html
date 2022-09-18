@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Basic Type
+                String Number Boolean Null Undefined
+            Reference Type
+                Object
+
+            JS变量保存在栈内存中， 基本数据类型直接在栈内存中存储
+            值与值之间是独立存在的
+
+            JS对象保存在堆内存中，每创建一个新的对象（new），都会在堆内存中开一个新的空间
+            一个变量改变时，所有对其地址的引用也会收到影响
+
+
+        */
+       var obj1 = new Object();
+       var obj2 = new Object();
+       obj1.name = "yc"
+       obj2.name = "yc"
+       //当比较两个reference data， 是在比较地址
+       console.log(obj1 == obj2) //false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

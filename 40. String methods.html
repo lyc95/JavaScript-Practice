@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var s = new String("hello");
+        console.log(s);
+        /*
+            已字符数组的形式在底层存在
+        */ 
+            console.log(String.fromCharCode(65,66,67,69)); //ABCE 通过字符编码生成字符产
+            console.log(s.concat(", ", "World!")); //hello, World!
+            console.log(s.indexOf('m')); //-1
+            console.log(s.indexOf('l')); //2
+            console.log(s.indexOf('l', 3));6
+            console.log(s.indexOf('l', 4)); //第二个参数指定开始查找的位置-1
+            console.log(s.lastIndexOf('l'));//3
+            console.log(s.lastIndexOf('l', 2));//2 第二个参数指定结束的位置
+            console.log(s.slice(0, 2)); //he 截取指定内容原数组不变. 2nd parameter is optional 可以接受negative
+            // substring(start, end) is similar 不能接受负 值， 如果有赋值那就是0
+            //substring 自动交换调整参数位置 to make sure start <= end
+
+            //splitting the calling string at occurrences of the substring sep.
+            var  str = "aa,bb,cc,dd,ee,ff,gg,hh@ii"
+            console.log(str.split(',')); //['aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg']
+            // if the input is empty str, it will become charArray 
+            console.log(str.split(''));
+            /*
+        Constructor
+            String()
+            Creates a new String object. It performs type conversion when called as a function, rather than as a constructor, which is usually more useful.
+
+            Static methods
+            String.fromCharCode(num1 [, ...[, numN]])
+            Returns a string created by using the specified sequence of Unicode values.
+
+            String.fromCodePoint(num1 [, ...[, numN)
+            Returns a string created by using the specified sequence of code points.
+
+            String.raw()
+            Returns a string created from a raw template string.
+
+            Instance properties
+            String.prototype.length
+            Reflects the length of the string. Read-only.
+
+            Instance methods
+            String.prototype.at(index)
+            Returns the character (exactly one UTF-16 code unit) at the specified index. Accepts negative integers, which count back from the last string character.
+
+            String.prototype.charAt(index)
+            Returns the character (exactly one UTF-16 code unit) at the specified index.
+
+            String.prototype.charCodeAt(index) 返回unicode字符编码
+            Returns a number that is the UTF-16 code unit value at the given index.
+
+            String.prototype.codePointAt(pos)
+            Returns a nonnegative integer Number that is the code point value of the UTF-16 encoded code point starting at the specified pos.
+
+            String.prototype.concat(str [, ...strN ])
+            Combines the text of two (or more) strings and returns a new string.
+
+            String.prototype.includes(searchString [, position])
+            Determines whether the calling string contains searchString.
+
+            String.prototype.endsWith(searchString [, length])
+            Determines whether a string ends with the characters of the string searchString.
+
+            String.prototype.indexOf(searchValue [, fromIndex])
+            Returns the index within the calling String object of the first occurrence of searchValue, or -1 if not found.
+
+            String.prototype.lastIndexOf(searchValue [, fromIndex])
+            Returns the index within the calling String object of the last occurrence of searchValue, or -1 if not found.
+
+            String.prototype.localeCompare(compareString [, locales [, options]])
+            Returns a number indicating whether the reference string compareString comes before, after, or is equivalent to the given string in sort order.
+
+            String.prototype.match(regexp)
+            Used to match regular expression regexp against a string.
+
+            String.prototype.matchAll(regexp)
+            Returns an iterator of all regexp's matches.
+
+            String.prototype.normalize([form])
+            Returns the Unicode Normalization Form of the calling string value.
+
+            String.prototype.padEnd(targetLength [, padString])
+            Pads the current string from the end with a given string and returns a new string of the length targetLength.
+
+            String.prototype.padStart(targetLength [, padString])
+            Pads the current string from the start with a given string and returns a new string of the length targetLength.
+
+            String.prototype.repeat(count)
+            Returns a string consisting of the elements of the object repeated count times.
+
+            String.prototype.replace(searchFor, replaceWith)
+            Used to replace occurrences of searchFor using replaceWith. searchFor may be a string or Regular Expression, and replaceWith may be a string or function.
+
+            String.prototype.replaceAll(searchFor, replaceWith)
+            Used to replace all occurrences of searchFor using replaceWith. searchFor may be a string or Regular Expression, and replaceWith may be a string or function.
+
+            String.prototype.search(regexp)
+            Search for a match between a regular expression regexp and the calling string.
+
+            String.prototype.slice(beginIndex[, endIndex])
+            Extracts a section of a string and returns a new string.
+
+            String.prototype.split([sep [, limit] ])
+            Returns an array of strings populated by splitting the calling string at occurrences of the substring sep.
+
+            String.prototype.startsWith(searchString [, length])
+            Determines whether the calling string begins with the characters of string searchString.
+
+            String.prototype.substring(indexStart [, indexEnd])
+            Returns a new string containing characters of the calling string from (or between) the specified index (or indices).
+
+            String.prototype.toLocaleLowerCase( [locale, ...locales])
+            The characters within a string are converted to lowercase while respecting the current locale.
+
+            For most languages, this will return the same as toLowerCase().
+
+            String.prototype.toLocaleUpperCase( [locale, ...locales])
+            The characters within a string are converted to uppercase while respecting the current locale.
+
+            For most languages, this will return the same as toUpperCase().
+
+            String.prototype.toLowerCase()
+            Returns the calling string value converted to lowercase.
+
+            String.prototype.toString()
+            Returns a string representing the specified object. Overrides the Object.prototype.toString() method.
+
+            String.prototype.toUpperCase()
+            Returns the calling string value converted to uppercase.
+
+            String.prototype.trim()
+            Trims whitespace from the beginning and end of the string.
+
+            String.prototype.trimStart()
+            Trims whitespace from the beginning of the string.
+
+            String.prototype.trimEnd()
+            Trims whitespace from the end of the string.
+
+            String.prototype.valueOf()
+            Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf() method.
+
+            String.prototype[@@iterator]()
+            Returns a new iterator object that iterates over the code points of a String value, returning each code point as a String value.
+        */
+    </script>
+</head>
+<body>
+    String<br/>
+        0: "h"<br/>
+        1: "e"<br/>
+        2: "l"<br/>
+        3: "l"<br/>
+        4: "o"<br/>
+        length: 5<br/>
+        [[Prototype]]: String<br/>
+        anchor: ƒ anchor()<br/>
+        at: ƒ at()<br/>
+        big: ƒ big()<br/>
+        blink: ƒ blink()<br/>
+        bold: ƒ bold()<br/>
+        charAt: ƒ charAt()<br/>
+        charCodeAt: ƒ charCodeAt()<br/>
+        codePointAt: ƒ codePointAt()<br/>
+        concat: ƒ concat()<br/>
+        constructor: ƒ String()<br/>
+        endsWith: ƒ endsWith()<br/>
+        fixed: ƒ fixed()<br/>
+        fontcolor: ƒ fontcolor()<br/>
+        fontsize: ƒ fontsize()<br/>
+        includes: ƒ includes()<br/>
+        indexOf: ƒ indexOf()<br/>
+        italics: ƒ italics()<br/>
+        lastIndexOf: ƒ lastIndexOf()<br/>
+        length: 0<br/>
+        link: ƒ link()<br/>
+        localeCompare: ƒ localeCompare()<br/>
+        match: ƒ match()<br/>
+        matchAll: ƒ matchAll()<br/>
+        normalize: ƒ normalize()<br/>
+        padEnd: ƒ padEnd()<br/>
+        padStart: ƒ padStart()<br/>
+        repeat: ƒ repeat()<br/>
+        replace: ƒ replace()<br/>
+        replaceAll: ƒ replaceAll()<br/>
+        search: ƒ search()<br/>
+        slice: ƒ slice()<br/>
+        small: ƒ small()<br/>
+        split: ƒ split()<br/>
+        startsWith: ƒ startsWith()<br/>
+        strike: ƒ strike()<br/>
+        sub: ƒ sub()<br/>
+        substr: ƒ substr()<br/>
+        substring: ƒ substring()<br/>
+        sup: ƒ sup()<br/>
+        toLocaleLowerCase: ƒ toLocaleLowerCase()<br/>
+        toLocaleUpperCase: ƒ toLocaleUpperCase()<br/>
+        toLowerCase: ƒ toLowerCase()<br/>
+        toString: ƒ toString()<br/>
+        toUpperCase: ƒ toUpperCase()<br/>
+        trim: ƒ trim()<br/>
+        trimEnd: ƒ trimEnd()<br/>
+        trimLeft: ƒ trimStart()<br/>
+        trimRight: ƒ trimEnd()<br/>
+        trimStart: ƒ trimStart()<br/>
+        valueOf: ƒ valueOf()<br/>
+        Symbol(Symbol.iterator): ƒ [Symbol.iterator]()<br/>
+        [[Prototype]]: Object<br/>
+        [[PrimitiveValue]]: ""<br/>
+        [[PrimitiveValue]]: "hello"<br/>
+</html>

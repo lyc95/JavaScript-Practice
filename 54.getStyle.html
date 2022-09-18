@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            // console.log(btn01);
+            // console.log(box1);
+            btn01.onclick = function(){
+                //ready style of box 1
+                //获取元素当前样式
+                //Syntax: element.currentStyle.stylename 读取当前元素正在显示的样式（只有IE支持）
+                //console.log(box1.currentStyle.width)
+                /*
+                    在其他浏览器中可以使用getComputedStyle(要获取的样式的元素， 伪元素一般=null) 获取当前样式
+                        belong wo window
+                    返回一个对象 该对象中封装了当前元素对应的样式
+                    通过对象.stylename来读取样式
+                    如果没有设置width， 他不会获取到auto 而是实际的长度
+                    该方法不支持IE8以下的浏览器
+
+                    The style get from currentStyle or getComputedStyle() are read-only!!!!!
+
+                */
+               var obj = getComputedStyle(box1);
+               console.log(obj.width); //100px
+               console.log(obj.backgroundColor); //rgb(255, 255, 0)
+
+            };
+            
+        }
+        /*
+            define a method to get current style
+            function
+        */ 
+
+        //处理兼容性问题
+        function getStyle(obj, name){
+            if (window.getComputedStyle){
+                //大部分浏览器
+                return getComputedStyle(obj, null)[name];
+            }
+            else{
+                //IE8
+                return obj.currentStyle[name];
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <button id="btn01">Click</button>
+    <div id="box1"></div>
+</body>
+</html>

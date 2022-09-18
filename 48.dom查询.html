@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从全局对象获取元素</title>
+    <script>
+        window.onload = function(){
+            var list = document.getElementsByTagName('li');
+            console.log(list.length); //4
+            console.log(list[0].innerHTML); //1
+            console.log(typeof list[0]); //object
+            console.log(list[0]); //1
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 
+        document:
+        getElementById()
+        getElementsByTagName()      一组
+        getElementsByName()     一组
+            如果查找结果为空 则结果是空数组
+
+            innerHTML用来获取元素内部的HTML代码
+            对于自结束标签<xxxxx/>， 这个属性没有意义
+            如果需要读取元素节点的属性
+            直接使用
+                元素.属性名
+                比如：element.id element.name element.value
+                注意读取class的时候， 需要使用element.className
+     -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4 </li>
+    </ul>
+</body>
+</html>

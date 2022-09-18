@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            function is also an object
+            处理基本类型(Number, Boolean, String, Null, Undefined)，其他的都是对象
+        */
+        // create function object
+        // var fun = new Function();
+        // console.log(fun)
+        // console.log(typeof fun) //function
+        //可以将要封装的代码以字符串的形式传递给构造函数(构造函数)
+            // var fun = new Function("console.log('hello');");
+            // console.log(fun);
+            // //调用函数
+            // fun();
+        //使用函数声明
+            // function functionName([parameters...]) {
+            //     codes...;
+            // }
+            // function fun2(){
+            //     console.log("Hi This is fun2");
+            // }
+            // fun2();
+        //使用函数表达式(声明匿名函数anonymous function然后赋值给变量)
+            // var functionName = function([parameters...]) {
+            //     codes...;
+            // }
+            // var fun3 = function(){
+            //     console.log("Hi This is fun3");
+            // }
+            // fun3()
+
+        //参数
+            // 调用函数时，解析器不会检查实参的类型
+            //  所以注意非法参数， if possible, do type checking first
+
+            // 调用函数时，解析器不会检查实参的数量
+            // 多余的实参不会被赋值， 如果实参数量少于形参， 则没有赋值的形参=undefined
+
+            //参数也可以是一个function
+        // 返回值
+            //返回值可以是任意类型 包括函数
+            // if there is no return, then return undefined
+            // function sum(a, b,c) {
+            //     return a + b + c;
+            // }
+            // console.log(sum(1,2,3));
+        //立即执行函数
+            // (function(){
+            //     alert("hello")
+            // })();
+
+            // (function(a, b){
+            //     console.log(a);
+            //     console.log(b);
+            // })(100,125)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

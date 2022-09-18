@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子节点和子元素</title>
+    <script>
+        window.onload = function(){
+            var city = document.getElementById("city")
+            //返回city所有子节点 包括文本节点在内
+            // console.log(city.childNodes);
+            //NodeList(11) [text, li, text, li, text, li, text, li, text, li, text]
+            // text is \n element
+            //DOM便签之间的空白也会当成文本文件（IE8 不会）
+
+
+            //返回所有li tag 子节点
+            //console.log(city.getElementsByTagName('li')); //HTMLCollection(5) [li, li, li, li, li]
+
+
+            //获取当前元素的所有子元素
+            // console.log(city.children)
+
+            //获取当前元素的第一个子节点， 包括空白文本
+            console.log(city.firstChild) //text
+            //获取当前元素的最后一个子节点， 包括空白文本
+            console.log(city.lastChild) //text
+
+
+
+            //firstElementChild 获取第一个子元素， 不支持IE8 及以上， 不要使用如果有兼容性的需求
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        通过元素节点调用
+        方法
+            getElementsByTagName()
+        属性
+            childNodes
+            firstChild
+            lastChild
+     -->
+     <ul id = "city">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+     </ul>
+</body>
+</html>

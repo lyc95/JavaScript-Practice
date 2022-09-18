@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var str = "1a2b3c4d5e6f7"
+        // var arr = str.split(/[A-z]/) //根据任意字母拆分
+        // console.log(arr);
+
+        // var str = "hello abc hello aec"
+        // var res = str.search(/[a]/)
+        // console.log(res); //6
+
+        // var str = "hello abc hello aec afc"
+        // //abc or aec or afc
+        // var res = str.search(/a[feb]c/)
+        // console.log(res); //6
+
+
+        // var str = "1a2b3c4d5e6f7"
+        // var res = str.match(/[A-z]/gi) //根据任意字母拆分 全局匹配
+        // console.log(res);//['a', 'b', 'c', 'd', 'e', 'f']
+        // console.log(str.match(/[A-z]/))// a
+
+        var str = "1a2b3c4d5e6f7a"
+        // var res = str.replace(/a/, '@@@') // 1@@@2b3c4d5e6f7a
+        var res = str.replace(/a/g, '@@@')
+        console.log(res); //1@@@2b3c4d5e6f7@@@
+
+        //remove all characters
+        var res = str.replace(/[A-z]/g, '')
+        console.log(res); //1234567
+
+    </script>
+</head>
+<body>
+    <!-- 
+        search
+            搜索字符串中是否含有指定内容
+            if contains, return the index of first occurance
+            if not return -1 instead
+            正则表达式可以作为参数
+            根据Regex来检索参数
+            没有全局匹配，只会查找第一个  even you set -g mode
+        match
+            找到一个或者多个正则表达式匹配的内容
+            默认情况下找到第一个符合的内容
+            可以设置全局匹配模式找到所有g
+            也可以设置gi 全局且忽略大小写
+            return Array Object for the result
+            可以call Array身上的方法
+        replace(被替换的内容， 新的内容)
+            匹配的内容替换成新的内容
+            默认只会替换第一个, 可以设置全局匹配模式 替换全部
+        split 
+            split string into array
+            正则表达式可以作为参数
+            根据Regex来split string
+            默认就是全局匹配
+     -->
+</body>
+</html>

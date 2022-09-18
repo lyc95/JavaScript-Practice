@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+
+            var items =  document.getElementsByName("item");
+            // all selected 
+            var checkedAllBtn = document.getElementById("checkedAllBtn");
+            checkedAllBtn.onclick = function(){
+                items.forEach(item => {
+                    item.checked = true;
+                })
+                checkedAllBox.checked = helper();
+            }
+            // all unselected 
+            var checkedNoBtn = document.getElementById("checkedNoBtn");
+            checkedNoBtn.onclick = function(){
+                items.forEach(item => {
+                    item.checked = false;
+                })
+                checkedAllBox.checked = helper();
+            }
+
+            // reverse selected 
+            var checkedRevBtn = document.getElementById("checkedRevBtn");
+            checkedRevBtn.onclick = function(){
+                items.forEach(item => {
+                    item.checked = !item.checked;
+                })
+                checkedAllBox.checked = helper();
+            }
+
+
+            //submit
+            var sendBtn = document.getElementById("sendBtn");
+            sendBtn.onclick = function(){
+                items.forEach(item => {
+                    if (item.checked) alert(item.value)
+                })
+            }
+
+            //checkedAllBox
+            //事件是给谁绑定的 this指向的就是谁
+            var checkedAllBox = document.getElementById("checkedAllBox");
+            checkedAllBox.onclick = function(){
+                items.forEach(item => {
+                    item.checked = this.checked;
+                })
+            }
+
+
+            function helper(){
+                var res = true;
+                items.forEach(item => {
+                    if (!item.checked) res = false;
+                })
+                return res;
+            }
+            items.forEach(item => {
+                item.onclick = item  => {
+                    checkedAllBox.checked = helper();
+                }
+            })
+
+
+
+        }
+    </script>
+</head>
+<body>
+    
+    <form action="" method="post">
+        你爱好的运动是？<input type="checkbox" id="checkedAllBox" /> 全选/全不选
+        <br/>
+        <input type="checkbox" name="item" value="足球" />足球
+        <input type="checkbox" name="item" value="篮球" />篮球
+        <input type="checkbox" name="item" value="羽毛球" />羽毛球
+        <input type="checkbox" name="item" value="乒乓球" />乒乓球
+        <br/>
+        <input type="button" id="checkedAllBtn" value="全选" />
+        <input type="button" id="checkedNoBtn" value="全不选" />
+        <input type="button" id="checkedRevBtn" value="反选" />
+        <input type="button" id="sendBtn" value="提交" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            // height increase/decrease with scroll event
+            var box1 = document.getElementById('box1')
+            // bind scroll event to the target box1 object
+            // firebox not support this attribute
+            // firefox use DOMMouseScroll to bind scroll event
+            //       this will need addEventListener() to bind
+
+            //chrome
+            box1.onmousewheel = function(event){
+                // alert("hihi")
+                event = event || window.event
+                //event.wheelDelta get scroll direction
+                // up = 120(positive) and down = -120(negative)
+                console.log(event.wheelDelta)
+
+                //firefox 不支持wheelDelta
+                //使用event.detail 在火狐浏览器
+                //up = -3(negative) and down = 3(positive)
+
+                if (event.wheelDelta > 0 || event.detail < 0) {
+                    // alert("up")
+                    // up box1 reduce height
+                    box1.style.height = box1.clientHeight - 10 + 'px'
+
+                } else {
+                    // alert("down")
+                    box1.style.height = box1.clientHeight + 10 + 'px'
+                }
+                /*
+                    当滚动时， 如果浏览器有滚动条， 滚动条会随之滚动
+                    this is default behaviour of browser
+                    if you wish this not happend 
+                    then return false in onmousewheel(...) to cancell this default behaviour
+                */
+
+                /*
+                火狐
+                    使用addEventListener（）方法绑定响应函数，取消默认行为不能使用return false
+                    需要使用event 来取消默认行为 event.preventDefault();
+                但是IE8 不支持 这个取消默认行为的function， 如果写死了就会报错
+                  // 加一个&&， 如果有就调用， 没有就不调用
+                    event.preventDefault && event.preventDefault()
+
+                */
+               //event.preventDefault();
+               event.preventDefault && event.preventDefault()
+               return false;
+                
+            }
+            //绑定滚动事件火狐
+            //bind(box1, "DOMMouseScroll", box1.onmousewheel)
+        }
+    </script>
+</head>
+<body>
+    <div style="height: 2000px;">
+    <div id="box1"></div>
+    </div>
+</body>
+</html>

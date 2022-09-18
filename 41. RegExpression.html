@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            正则表达式regular expression
+            用于定义一些字符串的规则
+            var reg = new RegExp(正则表达式， 匹配模式);
+            var reg = new RegExp('a'); 检查一个string时有没有 a 但是会区分大小写
+            匹配模式 
+                i ignore cases
+                g
+
+
+        */
+    //    var reg = new RegExp('a'); //object
+    //    console.log(reg); // /a/
+    //    var str = 'a'
+
+    //    //test() 检查是否负责正则表达式的规则
+    //    console.log(reg.test(str)); //true
+    //    console.log(reg.test('abc')); //true
+    //    console.log(reg.test('bc')); //false
+    //    console.log(reg.test('Abc')); //false
+
+    // var reg = new RegExp('a', 'i')
+    // console.log(reg.test('Abc')); //true
+
+
+    /*
+        使用字面量创建正则表达式
+        var 变量 = /正则表达式/匹配模式
+    */
+
+    // var reg = /a/i; //没有引号
+    // console.log(typeof reg);//onject
+    // console.log(reg.test("Abc")); //true
+
+    //check whether str contains a or b or c
+    //使用|表示或
+
+    // reg = /a|c|c/;
+    // console.log(reg.test('ckklkl'));//true
+
+    //check whether str contains characters
+
+    //[]内也是或的关系
+    // reg = /[ab]/; a or b
+    // [a-z] 任意小写字母
+    // [0-9]
+
+    // reg = /[a-z]/i
+    // console.log(reg.test(4564654564564655)); //false
+    // console.log(reg.test('4564654564564655a')); //true
+    // console.log(reg.test('4564654564564655A')); //true
+
+    //检查一个string里是否含有 abc or adc or aec
+    // reg = /a[dbe]c/;
+    // console.log(reg.test("abc"));//true
+    // console.log(reg.test("adc"));//true
+    // console.log(reg.test("aec"));//true
+    // console.log(reg.test("aac"));//false
+
+    /*
+        [^ ]除了 需要在括号里
+        除了后面的内容 还包括其他的吗？
+    */
+    reg = /[^ab]/
+    console.log(reg.test("a")); //false
+    console.log(reg.test("b")); //false
+    console.log(reg.test("ab")); //false
+    console.log(reg.test("ad")); //true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

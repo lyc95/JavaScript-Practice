@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            内建对象
+                js中的内部对象包括
+                    Array、Boolean、Date、Function、Global、Math、Number、Object、RegExp、String
+                以及各种错误类对象，
+                    包括Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError。
+
+            宿主对象
+
+            自定义对象
+
+
+            数组Array
+                index start from 0 to length - 1
+
+
+        */
+        // var arr = [1, 2]
+        // console.log(arr)
+        // console.log(arr[0])
+        // console.log(typeof arr)
+
+        // var arr = new Array();
+        // console.log(arr)
+        // console.log(typeof arr) //object
+        // //添加元素
+        // arr[0] = 0
+        // arr[1] = 1
+        // arr[3] = 3
+        // arr[9] = 9
+        // //读取元素, 不存在的索引会返回undefined
+        // console.log(arr[0])//undefine
+        // // 对于非连续的数组， length会返回biggest index + 1
+        // console.log(arr.length)//10
+        // console.log(arr)
+
+        // //设置长度，如果你设置的大于原长度，多出的部分会空出来‘
+        
+        // arr.length = 20
+        // console.log(arr)
+        // // 如果小于原长度， 多出的会被删除
+        // arr.length = 2
+        // console.log(arr)
+
+        // //添加元素到数组的末尾
+        // //or arr[arr.length] = 100
+        // arr.push(100)
+        // console.log(arr)
+
+
+
+        //字面量创建新数组
+        var arr = [0, 1, 2, 3, 4, 5]
+        console.log(arr)
+        var arr2 = new Array(100, 200, 300, 400)
+        console.log(arr2)
+
+        //创建一个长度为10的空数组（当只有一个变量的时候）
+        var arr3 = new Array(10)
+        console.log(arr3)
+
+        //可以是任意数据类型, 
+        var arr4 = ["hello", true, null, undefined, {name:"lyc"},function(){console.log("function here");}]
+        console.log(arr4)
+        arr4[4]();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*
+            JS provided us with 3 包装类 通过包装类可以将基本的数据类型转换成为对象
+                String()
+                Number()
+                Boolean()
+                ...
+                供底层内部使用
+
+                方法和属性能够添加给对象， 不能添加给基本数据类型（number, boolean, string,null, undefined）
+                所以当我们对一些基本数据类型的值调用属性和方法时    
+                    browser会临时使用包装类将其转换成Object, 然后再调用对象身上的属性与方法
+                    之后，再将其转换成基本数据类型
+
+
+
+                    //1
+                    var s = 123
+                    console.log(s);
+                    console.log(typeof s);
+                    //string 依然是基本的数据类型对象
+                    s = s.toString()
+                    //临时添加hello属性通过包装类, 调用后会回归原类型
+                    s.hello = "hello"
+                    console.log(s);
+                    console.log(typeof s);
+                    console.log(s.hello); //undefine
+                    console.log(typeof s);
+
+
+                    //2
+                    var s = 123
+                    console.log(s);
+                    console.log(typeof s);
+                    //string 这里变成了对象类
+                    s = new String(s)
+
+                    s.hello = "hello"
+                    console.log(s);
+                    console.log(typeof s);
+                    console.log(s.hello); //hello
+                    console.log(typeof s);
+
+            使用基本类型的数据的对象在做对比的时候，可能会出现一些意料外的问题
+        */
+    //    var a = 123;
+    //    console.log(typeof a);//number
+
+
+       //必须使用new 关键字
+    //    var b = new Number(123)
+    //    var b1 = new Number(123)
+    //    console.log(typeof b);//object
+    //    console.log(b == b1); //false
+    //    var str = new String("hello")
+    //    console.log(typeof str);//object
+
+
+    //    if(new Boolean(false)){ // {} 
+
+    //     // if empty string"", then will not executed
+
+    //         console.log(123123132231); // executed
+    //    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

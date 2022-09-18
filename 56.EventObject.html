@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #areaDiv{
+            /* margin-top: 500px; */
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        #showMsg{
+            margin-top: 10px;
+            width: 500px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var areaDiv = document.getElementById("areaDiv");
+            var showMsg = document.getElementById("showMsg");
+            //onmousemove
+            areaDiv.onmousemove = function(event){
+                // console.log(event);
+                var x = event.clientX;
+                var y = event.clientY;
+                showMsg.innerHTML = `${x}, ${y}`
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <!-- 
+        当响应函数被调用时，浏览器每次都会将一个事件对象作为实参传递进响应函数中，这个事件对象中封装了当前事件的相关信息，比如：鼠标的坐标，键盘的按键，鼠标的按键，滚轮的方向。。
+
+        可以在响应函数中定义一个形参，来使用事件对象，但是在IE8以下浏览器中事件对象没有做完实参传递，而是作为window对象的属性保存
+
+        例子：
+
+        元素.事件 = function(event){  
+            event = event || window.event;  
+        };  
+        
+        元素.事件 = function(e){  
+            e = e || event;  
+            
+        };  
+        获取到鼠标的坐标
+        clientX和clientY
+        用于获取鼠标在当前的可见窗口的坐标
+        div的偏移量，是相对于整个页面的
+
+        pageX和pageY 可以获取鼠标相对于当前页面的坐标
+        但是这个两个属性在IE8中不支持，所以如果需要兼容IE8，则不要使用
+        var left = event.clientX;
+        var　top = event.clientY;
+     -->
+     <div id="areaDiv"></div>
+     <div id="showMsg"></div>
+</body>
+</html>

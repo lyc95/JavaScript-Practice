@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            document.onmousemove = function(e){
+                e = e || window.event;
+                // ClientX Y 是当前的可见窗口的鼠标
+                //但是我们设置的偏移量是基于document页面的
+
+                var x = e.clientX;
+                var y = e.clientY;
+
+                // 可以使用pageX 但是IE8 当前不支持
+                // var x = e.pageX;
+                // var y = e.pageY;
+
+
+                //获取鼠标的滚动距离, 然后加上clientX 可以得到最终位置
+                //chrome 认为滚动条的翻滚距离在body
+                // firefox 认为滚动条的翻滚距离在 html element
+                var dy = document.body.scrollTop || document.documentElement.scrollTop;
+                var dx = document.body.scrollLeft || document.documentElement.scrollLeft;
+                // var y = e.clientY;
+
+                box1.style.left = x + dx + 'px';
+                box1.style.top = y + dy + 'px';
+
+            }
+        }
+    </script>
+</head>
+<body style="height: 2000px;">
+    <div id="box1"></div>
+
+</body>
+</html>

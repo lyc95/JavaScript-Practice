@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 
+        import external JS file 
+        Benefits
+        1. can be used by multiple pages
+        2. browser can use cache for this
+        一旦引入外部文件，就不可以再编写代码了，即使编写了browser也会忽略
+        如需要 create a new script tag
+        JS code 的运行顺序是从上到下
+    -->
+    <script src="2.js"></script>
+
+    <!-- 内部编写JS代码 -->
+    <script>
+        alert("im the code written internally")
+    </script>
+</head>
+<body>
+    <!-- JS code cloud be written in the onclick() attribute -->
+    <button onclick="alert('why????')">Click</button>
+    <!-- JS code cloud be written in the href attribute for a tag -->
+    <a href="javascript:alert('This is a click in A tag');">Clik here </a>
+</body>
+</html>

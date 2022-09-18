@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        var p =new Person("yc", 18, "male")
+        // 实际上输出的是toString（）方法的返回值
+        //  更新我们没办法修改打印的object的内容，即使重新定义了tostring方法
+        //我们可以为对象添加一个toString（）方法
+        p.__proto__.__proto__.toString = function(){
+            return "tooooooooooooooooooooooooo";
+        }
+        console.log(p)
+        console.log(p.__proto__.__proto__.toString)// function
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

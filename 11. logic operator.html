@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            ! NOT
+                Boolean
+                for non-Boolean datatype
+                    convert to boolean first then do the ! operation
+                 var a = "hello"
+                console.log(!!a)//true
+
+            && AND
+                // first item is true. will check 2nd item
+                // first item is false, will no check further for 2nd item -> return false
+                for non-Boolean datatype
+                    convert to boolean first then do the && operation and then return original value
+                    1. 如果两个值都是true。 返回后面的值
+                        console.log(1 && 2) //2
+                        console.log(2 && 1) //1
+                    2. 一个true 一个false， 返回false的原值
+                        console.log(2 && 0) //0
+                        console.log(0 && 2) //0
+                        console.log(NaN && 2) //NaN
+                    3.两个值都是false。 返回靠前的false  的原值  
+                        console.log(0 && NaN) //0
+                        console.log(NaN && 0) //NaN
+
+                    true && any
+                    第一个值是true， 返回第二个原值 
+                    false && any
+                    第一个值为false， 返回第一个原值 
+            || OR
+                // first item is true. will not check 2nd item -> return true
+                // first item is false, will check further for 2nd item
+                for non-Boolean datatype
+                    convert to boolean first then do the || operation
+                true || any
+                第一个值是true， 返回第一个原值 
+                false || any
+                第一个值为false， 返回第二个原值 
+        */
+       console.log(1 || 2) //1
+       console.log(2 || 1) //2
+
+       console.log(0 || 1) //1
+       console.log(2 || 0) //2
+
+       console.log(NaN || 0) //0
+       console.log(0 || NaN) //NaN
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

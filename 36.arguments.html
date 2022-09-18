@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            调用函数时候， 每次都会传递两个隐藏参数
+            1. context - this
+            2. 封装实参arguments
+                - arguments一个类数组对象
+                - 调用函数时传递的所有实参 都会在arguments中保存
+                --arguments.length 实参的个数
+                --即使不定义形参也可以通过arguments使用实参
+                - callee attribute
+                    对应一个函数对象， 指向当前的函数
+
+        */ 
+       function fun(){
+            console.log(arguments.length); //2
+            console.log(arguments[0]); //hello
+            console.log(arguments[1]); // 1
+            console.log(arguments.callee == fun); //true
+       }
+       fun("hello", 1)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

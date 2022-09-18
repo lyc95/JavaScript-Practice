@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            equal operation
+            == equal
+                如果两个值的数据类型不同，则会先进行数据的类型转换， 
+                转换成same数据类型后再进行比较
+                console.log(1 == 1)// true
+                console.log(1 == "1") //true
+                console.log(true == 1) //true
+                console.log(true == "1") //true
+                console.log(null == 0) //false
+                console.log(null == undefined) //true
+                //NaN 不和任何值相等包括它自身
+                //isNaN() to determine the value
+                console.log(NaN == NaN) //false
+                var b =NaN
+                console.log(isNaN(b)) //true
+            != not equal
+
+            === 
+                全等， 不会进行类型转换， 两个值类型不同直接return false
+                console.log(1 === "1") //false
+                console.log(null === undefined) //false
+
+            !== 
+                不全等
+                不会进行类型转换， 两个值类型不同直接return true 
+                console.log("1" !== 1)//true
+
+        */
+       console.log(10 != 2) //true
+       //类型不相等也会自动进行类型转换
+       console.log("1" != 1) //false
+
+       
+
+      
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

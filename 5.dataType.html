@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            data type in JS
+            1. String
+            2. Number
+            3. Boolean
+            4. Null
+            5. Undefined
+            6. Object
+            Only object is Reference type
+            the rest are 基本数据类型(value type)
+        */
+
+    //String
+        // var str = "I'm String"
+        // var str2 = str
+        // str2 = "I'm String2"
+        // console.log(str) //I'm String
+        // console.log(str2) //I'm String2
+        // //双引号里不能加双引号，单引号同
+        // //混用可以
+        // //可以加\ 来表示引号 \' \" \\
+        // var str3 = "i said: \" Today is Good \"" //i said: " Today is Good "
+        // str3 = true //可以类型转换
+        // console.log(str3)
+
+    //Number
+        //JS中所有数值都是Number 包括整数和浮点数
+        // var a = 123
+        // var b = "123"
+        // //use typeof to check type of data
+        // console.log(typeof a) //number
+        // console.log(typeof b) //string
+        // b = 456
+        // console.log(typeof b) //number
+
+        // //最大值1.7976931348623157e+308
+        // console.log(Number.MAX_VALUE)
+        // //如果超过最大值， 则返回Infinity(正无穷) datatype is number
+        // console.log(Number.MAX_VALUE*Number.MAX_VALUE)
+        // console.log(-1*Number.MAX_VALUE*Number.MAX_VALUE) //-Infinity(负无穷)
+        // console.log(typeof Infinity) //number
+
+        //大于零的最小值 5e-324
+        //console.log(Number.MIN_VALUE)
+
+        // a= "abc" * "cd"
+        // b =NaN
+        // console.log(a) //NaN Not A Number
+        // console.log(typeof a) //number
+
+
+        // calculation of float point number
+        // the resulu may not be accurate sometimes
+
+        //console.log(0.1 + 0.2) //0.30000000000000004
+
+    //Boolean
+        // console.log(typeof true) //boolean
+        // console.log(typeof false) //boolean
+        // console.log(123 === 123) // true
+        // console.log(123 == "123") // true
+        // console.log(123 === "123") // false
+
+    //Null and Undefined
+        //Null 类型的值只有一个，就是null，
+        //数据类型是object 通常来表示一个空对象
+        // var a = null
+        // console.log(a) //null
+        // console.log(typeof a) //object
+
+        //Undefined 类型的值只有一个，就是undefined
+        // declared variable but not assign a value to it
+        // var b;
+        // console.log(b) //undefined
+        // console.log(typeof b) //undefined
+        // console.log(null == undefined) //true
+        // console.log(null === undefined) //false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
