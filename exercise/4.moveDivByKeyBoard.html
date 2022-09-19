@@ -15,17 +15,11 @@
     </style>
     <script>
         window.onload = function(){
-            document.onkeydown = function(event) {
-                event = event || window.event;
-                var box1 = document.getElementById("box1");
-                var speed = 10
-                // 37 left  38 up 39 right 40 down
-
-                //user now can presee control + speed up
-                if (event.ctrlKey) {
-                    speed = 200
-                }
-                switch (event.keyCode) {
+             var box1 = document.getElementById("box1");
+            var speed = 10;
+            var dir = 0
+            setInterval(function(){
+                switch (dir) {
                     case 37:
                         box1.style.left = box1.offsetLeft - speed + 'px'
                         break;
@@ -42,6 +36,19 @@
                     default:
                         break;
                 }
+            }, 30)
+            document.onkeydown = function(event) {
+                event = event || window.event;
+                dir = event.keyCode;
+                //user now can presee control + speed up
+                if (event.ctrlKey) {
+                    speed = 200
+                }
+            }
+            document.onkeyup = function(event){
+                event = event || window.event;
+                dir = undefined;
+                speed = 10
             }
         }
     </script>

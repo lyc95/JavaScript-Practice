@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var img1 = document.getElementById("img1");
+            var imgArr = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"]
+            var index = 0;
+            var mark;
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function(){
+                clearInterval(mark)
+                // clearInterval can receive any data
+                // if params is valid, it will cancell accordingly
+                // else nothing will happen
+            }
+
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function(){
+                clearInterval(mark)
+                mark = setInterval(function(){
+                    img1.src = "./imges/" + imgArr[index++]
+                    if (index >= imgArr.length) index = 0;
+                }, 1000)
+                // clearInterval can receive any data
+                // if params is valid, it will cancell accordingly
+                // else nothing will happen
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id = "img1" src="./imges/2.jpg" alt=""></br>
+    <button id="btn01">Start</button>
+    <button id="btn02">Stop</button>
+</body>
+</html>

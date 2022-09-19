@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            封装了地址栏的信息
+        */
+       window.onload = function(){
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            console.log(location);
+            // 如果直接将location属性修改为以一个完整路径或相对路径
+            // 页面会自动跳转至该路径并生成历史记录 stored in the History
+            // location = "https://www.google.com/"
+            //assign()
+                //  跳转到其他页面， 作用和直接修改location一样
+                //location.assign("https://www.google.com")
+            //reload()
+                //Reloading the page
+                //location.reload()
+                //location.reload(true)  -> clear the cache and then reload
+            //replace()
+                //使用新的文档替换当前文档, 不能生成历史记录
+                //不可以回去了（can not go back to prev page）
+                location.replace("https://www.google.com")
+
+
+        }
+       }
+    </script>
+</head>
+<body>
+    <button id="btn">
+        Click
+    </button>
+</body>
+</html>

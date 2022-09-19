@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            setInterval
+                设置定时调用
+                将一个函数设置成每个一段时间执行一次
+                this function will return a number which can uniquely identify a 定时器
+
+            clearInterval
+
+            setTimeout
+                延时调用
+                it will execute after a period of time(delay) and it will only execute once
+                it will return the number, can use thise number to close this timeout
+            clearTimeout
+        */ 
+       window.onload = function(){
+        var cnt = document.getElementById("cnt");
+        var val = 1
+        var mark = setInterval(() => {
+            cnt.innerHTML = val++;
+            if(val > 10) {
+                clearInterval(mark);
+                return;
+            }
+        }, 1000)
+       }
+    </script>
+</head>
+<body>
+    <h1 id="cnt">1</h1>
+</body>
+</html>
