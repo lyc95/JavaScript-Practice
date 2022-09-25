@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .b2{
+            width: 200px;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById('box');
+            var btn01 = document.getElementById('btn01');
+            btn01.onclick = function(){
+                /*
+                    通过style属性来修改元素的样式， 每修改一次，浏览器就要重新渲染一个页面
+                    效率与性能不高
+                */ 
+                // box.style.width = "200px";
+                // box.style.height = "200px";
+                // box.style.backgroundColor = "yellow";
+
+                // one line can change multiple styles
+                // 可以通过修改元素的class的属性来间接修改样式（仅仅需要修改一次，浏览器only required to render the page once）
+                // 性能比较好
+                // box.className = "b2";
+
+                //原有值的基础上增加样式
+                // box.className += " b2";
+                // addClass(box,"b2");
+                // removeClass(box,"b1")
+                toggleClass(box,"b2")
+            };
+            // hasClass(box, "b2");
+        }
+        //obj Element Node
+        //cn  classname
+        function addClass(obj,cn){
+            if (!hasClass(obj, cn)) {
+                obj.className += " " + cn;
+            }
+        };
+        function hasClass(obj, cn) {
+            // \b 单词边界
+            // var reg = /\bb2\b/;
+            var reg = new RegExp("\\b" + cn + "\\b");
+            // alert(reg);
+            return reg.test(obj.className);
+        }
+
+        function removeClass(obj, cn){
+            var reg = new RegExp("\\b" + cn + "\\b");
+            obj.className = obj.className.replace(reg, '');
+        }
+
+        //切换
+        function toggleClass(obj, cn) {
+            //切换
+            //有删无增
+            if (hasClass(obj, cn)) {
+                removeClass(obj, cn);
+            } else {
+                addClass(obj,cn);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button id="btn01">Click to change the style of box</button>
+    <br /><br />
+    <div id="box" class="b1"></div>
+</body>
+</html>

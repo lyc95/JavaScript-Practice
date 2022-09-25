@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 500px;
+            height: 333px;
+        }
+        #outer{
+            width: 520px;
+            height: 333px;
+            margin: 50px auto;
+            background-color: greenyellow;
+            padding: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #imgList{
+            list-style: none;
+            /* width: 2600px; */
+            position: absolute;
+            left: 0;
+        }
+        #imgList li{
+            float: left;
+            margin: 0 10px;
+        }
+
+        #nav{
+            position: absolute;
+            bottom: 15px;
+            /* left: 197px; */
+        }
+        #nav a {
+            width: 15px;
+            height: 15px;
+            float: left;
+            background: red;
+            margin: 0 5px;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+        #nav a:hover {
+            background-color: black;
+        }
+    </style>
+
+    <!-- 引入工具函数  -->
+    <script type="text/javascript" src="./tools/tools.js"></script>
+
+    <script>
+        window.onload = function() {
+            var imgList = document.getElementById("imgList");
+            var imgArr = document.getElementsByTagName("img");
+            imgList.style.width = 520*imgArr.length + "px";
+
+            // set nav point center
+            var nav = document.getElementById("nav");
+            var outer = document.getElementById("outer");
+            nav.style.left = (outer.offsetWidth - nav.offsetWidth)/2 + "px"
+
+            var allA = document.getElementsByTagName("a");
+            var index = 0;
+            allA[index].style.backgroundColor = "black"
+
+            //click to change pictures
+
+
+            var timer;
+            for (var i = 0; i < allA.length; i++) {
+                // add num attribute
+                allA[i].num = i;
+
+                allA[i].onclick = function(){
+
+                    clearInterval(timer);
+
+                    // get num attribute
+                    index = this.num;
+                    // imgList.style.left = -520 * index + "px";
+                    setA();
+                    move(imgList, -520 * index, 10, "left", () => {
+                        autoChange();
+                    });
+                    // obj, endPoint, speed, dir, callback
+                }
+            }
+            autoChange();
+            //set color
+            function setA(){
+
+                if (index >= imgArr.length - 1) {
+                    index = 0;
+
+                    //set last pic to be same as first pic
+                    imgList.style.left = 0;
+                }
+                for (var i = 0; i < allA.length; i++){
+                    // 这里不能设置红色因为这里设置的是内联样式
+                    // hover 的将会失效
+                    // 这个设置空， 即没有内联样式， 则样式表里的样式会生效
+                    allA[i].style.backgroundColor = "";
+                }
+                allA[index].style.backgroundColor = "black";
+            }
+
+            //create a function to auto chang pic
+            function autoChange(){
+                timer = setInterval(function(){
+                    index++;
+                    index %= imgArr.length;
+                    move(imgList, -520 * index, 100, "left", () => {
+                        setA();
+                    });
+                }, 3000);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li>
+                <img src="./exercise/imges/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./exercise/imges/2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./exercise/imges/3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./exercise/imges/4.jpg" alt="">
+            </li>
+            <li>
+                <img src="./exercise/imges/5.jpg" alt="">
+            </li>
+            <li>
+                <img src="./exercise/imges/1.jpg" alt="">
+            </li>
+        </ul>
+        <!-- nav -->
+        <div id="nav">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+</html>
